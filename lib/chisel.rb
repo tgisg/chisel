@@ -7,9 +7,20 @@ class Chisel
   end
 
   def convert_headers(markdown_input)
-    markdown_input[0] = "<h1>"
-    markdown_input + "</h1>"
-  end
+    character_array = markdown_input.chars
+     if character_array[0..1] = '# '
+       character_array[0] = "<h1>"
+       character_array.push("</h1>")
+
+     elsif character_array[0..2] = '## '
+       character_array[0..1] = "<h2>"
+       character_array.push("</h2>")
+     end
+     character_array.join
+   end
+
+    # markdown_input[0] = "<h1>"
+    # markdown_input + "</h1>"
 end
 
 
