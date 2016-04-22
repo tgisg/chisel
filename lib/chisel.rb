@@ -44,6 +44,10 @@ class Chisel
       markdown_array.push("</p>")
     end
     markdown_array.join
+  end
+
+  def convert_emphases
+    
 
   end
 

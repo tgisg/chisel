@@ -47,4 +47,9 @@ class ChiselTest < Minitest::Test
     chisel = Chisel.new("hello")
     assert_equal('<p>hello</p>', chisel.convert_headers)
   end
+
+  def test_can_convert_markdown_single_asterisk_to_html_em
+    chisel = Chisel.new("*hello*")
+    assert_equal('<em>hello</em>', chisel.convert_emphases)
+  end
 end
